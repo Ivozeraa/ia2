@@ -4,10 +4,112 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conversor de Texto para Fala</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            color: rgb(255, 255, 255);
+            background-image: url('wall-e-upon-the-endless-sky-3840x2160-v0-0ff76k4cjhj91.webp'); /* Substitua pelo URL da sua imagem */
+            background-size: fill; /* Faz a imagem cobrir toda a área do corpo */
+            background-position: center; /* Centraliza a imagem */
+            background-repeat: no-repeat; /* Evita que a imagem se repita */
+            margin: 0;
+        }
+
+        nav {
+            color: rgb(255, 255, 255);
+            display: flex;
+            justify-content: center; /* Centraliza o conteúdo do nav */
+            align-items: center; /* Alinha verticalmente o conteúdo */
+            background-color: rgba(255, 255, 255, 0.288); /* Fundo semi-transparente para melhor visibilidade */
+            padding: 10px; /* Adiciona um pouco de espaçamento interno */
+            margin-bottom: 20px; /* Ajusta a margem inferior para melhor espaçamento */
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none; /* Remove os marcadores da lista */
+            padding: 0; /* Remove o preenchimento padrão da lista */
+            margin: 0; /* Remove a margem padrão da lista */
+            align-items: center; /* Garante que os itens da lista estejam alinhados verticalmente */
+            flex-wrap: wrap; /* Permite que os itens se movam para a próxima linha em telas menores */
+            gap: 10px; /* Adiciona espaço entre os itens */
+        }
+
+        nav li {
+            display: flex;
+            align-items: center; /* Alinha verticalmente o conteúdo dos itens da lista */
+        }
+
+        nav img {
+            height: 30px; /* Define uma altura fixa para a imagem */
+        }
+
+        textarea {
+            outline: none; /* Remove a borda de foco padrão */
+            border: 2px solid #fff; /* Adiciona uma borda personalizada branca */
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px; /* Adiciona bordas arredondadas */
+            transition: border-color 0.3s ease; /* Adiciona transição suave para a cor da borda */
+            width: 90%; /* Ajusta a largura para melhor adaptação em telas menores */
+            max-width: 600px; /* Define uma largura máxima */
+            height: 500px;
+            margin: 0 auto; /* Centraliza horizontalmente */
+        }
+
+        textarea:focus {
+            border-color: #4caf50; /* Muda a cor da borda quando o textarea está em foco */
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            cursor: pointer;
+            border-radius: 8px; /* Adiciona bordas arredondadas */
+            transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona transição suave para a cor de fundo e efeito de transformação */
+        }
+
+        button:hover {
+            background-color: #45a049; /* Cor do botão quando passa o mouse sobre ele */
+            transform: scale(1.05); /* Aumenta ligeiramente o botão para um efeito de zoom */
+        }
+
+        /* Media queries para dispositivos móveis */
+        @media (max-width: 768px) {
+            nav {
+                padding: 10px 5px; /* Ajusta o padding em telas menores */
+            }
+
+            nav li {
+                margin-bottom: 10px; /* Adiciona espaçamento vertical entre os itens */
+            }
+
+            textarea{
+                width: 65%;
+                height: 400px;
+            }
+
+            button {
+                width: 70px; /* Faz o botão ocupar toda a largura disponível */
+                padding: 15px; /* Ajusta o padding para um botão mais espaçoso */
+            }
+        }
+    </style>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><img src="logo-eeep-removebg-preview.png" alt="Logo"></li>
+            <li><h1>Projeto: Inteligência Artificial</h1></li>
+        </ul>
+    </nav>
     <h1>Conversor de Texto para Fala</h1>
-    <textarea id="text" rows="10" cols="50" placeholder="Digite o texto aqui..."></textarea><br>
+    <textarea id="text" rows="10" placeholder="Digite o texto aqui..."></textarea><br>
     <button onclick="falar()">Falar</button>
 
     <script>
